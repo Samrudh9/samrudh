@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Samrudh — Developer Portfolio. Projects, skills, and experience.">
+    <title>{% block title %}Samrudh{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <!-- Navigation — matching reference portfolio -->
+    <nav class="navbar" id="navbar">
+        <a href="/" class="nav-logo">Samrudh</a>
+        <div class="nav-links" id="navLinks">
+            <a href="/about" class="{% if active_page == 'about' %}active{% endif %}">About</a>
+            <a href="/skills" class="{% if active_page == 'skills' %}active{% endif %}">Tech Stack</a>
+            <a href="/projects" class="{% if active_page == 'projects' %}active{% endif %}">Projects</a>
+            <a href="/contact" class="{% if active_page == 'contact' %}active{% endif %}">Contact</a>
+            <a href="https://drive.google.com/file/d/1UxqlwElKJU8_sAGN5yUxK-Ru3sOxZiUE/preview" target="_blank"
+                rel="noopener noreferrer" class="nav-resume-btn">
+                Resume
+            </a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Banner -->
+    <div class="banner">
+        <p class="banner-text">This website is under construction; Stalk at your own risk ;)</p>
+    </div>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main class="main-content page-enter">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <span>Made on earth with</span>
+            <img src="{{ url_for('static', filename='images/heart.png') }}" alt="heart" class="footer-heart-img">
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
