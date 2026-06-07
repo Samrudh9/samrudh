@@ -76,7 +76,7 @@ ol {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1000;
   padding: 20px var(--margin-desktop);
   display: flex;
   justify-content: space-between;
@@ -155,7 +155,8 @@ ol {
   background: none;
   border: none;
   padding: 8px;
-  z-index: 1001;
+  z-index: 1002;
+  position: relative;
 }
 
 .hamburger span {
@@ -175,6 +176,10 @@ ol {
 
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.hamburger.active span {
+  background: var(--bg);
 }
 
 /* ========== LAYOUT ========== */
@@ -714,7 +719,8 @@ ol {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    left: 0;
+    right: 0;
     width: 100%;
     height: 100vh;
     background: var(--text);
@@ -722,13 +728,13 @@ ol {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    transition: right 0.3s ease;
-    z-index: 999;
-    mix-blend-mode: normal;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+    z-index: 1001;
   }
 
   .nav-links.open {
-    right: 0;
+    transform: translateX(0);
   }
 
   .nav-links a {
