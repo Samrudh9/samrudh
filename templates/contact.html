@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Contact{% endblock %}
 
+{% block head_scripts %}
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+{% endblock %}
+
 {% block content %}
 <section class="section">
     <div class="contact-section">
@@ -17,16 +21,17 @@
                     about tech.</p>
                 <div class="contact-channels">
                     <div class="contact-channel">
-                        <img src="{{ url_for('static', filename='images/li.png') }}" alt="linkedin">
+                        <img src="{{ url_for('static', filename='images/li.png') }}" alt="linkedin" >
                         <div>
-                            <div class="contact-channel-label" href="https://www.linkedin.com/in/samrudhsshetty/">
-                                LinkedIn</div>
+                            <div class="contact-channel-label" href="https://www.linkedin.com/in/samrudhsshetty/"><a href="https://www.linkedin.com/in/samrudhsshetty/" target="_blank" rel="noopener noreferrer">
+                                LinkedIn</a></div>
                         </div>
                     </div>
                     <div class="contact-channel">
                         <img src="{{ url_for('static', filename='images/github.png') }}" alt="github">
                         <div>
-                            <div class="contact-channel-label" href="github.com/samrudh9">GitHub</div>
+                            <div class="contact-channel-label" href="https://github.com/samrudh9"><a href="https://github.com/samrudh9" target="_blank" rel="noopener noreferrer">
+                                GitHub</a></div>
                         </div>
                     </div>
                 </div>

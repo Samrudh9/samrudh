@@ -49,13 +49,26 @@ revealElements.forEach(el => revealObserver.observe(el));
 
 // ========== CONTACT FORM ==========
 const contactForm = document.getElementById('contactForm');
-if (contactForm) {
+if (contactForm && typeof emailjs !== 'undefined') {
+  emailjs.init('ui1ogHVF1Ppm1DqEl');
+
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const status = document.getElementById('formStatus');
-    status.textContent = '✓ Message sent! I\'ll get back to you soon.';
-    status.className = 'form-status success';
-    contactForm.reset();
-    setTimeout(() => { status.style.display = 'none'; }, 5000);
+    status.textContent = 'Sending...';
+    status.className = 'form-status';
+
+    emailjs.sendForm('service_3n53gkc', 'template_p61z0id', contactForm)
+      .then(() => {
+        status.textContent = '✓ Message sent! I\'ll get back to you soon.';
+        status.className = 'form-status success';
+        contactForm.reset();
+        setTimeout(() => { status.textContent = ''; }, 5000);
+      })
+      .catch((error) => {
+        status.textContent = '✗ Failed to send. Please try again.';
+        status.className = 'form-status error';
+        console.error('EmailJS error:', error);
+      });
   });
 }
