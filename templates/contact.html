@@ -1,5 +1,12 @@
 {% extends "base.html" %}
-{% block title %}Contact{% endblock %}
+{% block title %}Contact Samrudh Shetty — Hire a Backend Developer{% endblock %}
+{% block meta_description %}Get in touch with Samrudh S Shetty for backend development, AI projects, internship opportunities, or collaboration. Available for hire.{% endblock %}
+{% block canonical %}https://buildwithsamrudh.xyz/contact{% endblock %}
+{% block og_title %}Contact Samrudh Shetty — Hire a Backend Developer{% endblock %}
+{% block og_description %}Get in touch with Samrudh S Shetty for backend development, AI projects, internship opportunities, or collaboration.{% endblock %}
+{% block og_url %}https://buildwithsamrudh.xyz/contact{% endblock %}
+{% block tw_title %}Contact Samrudh Shetty — Hire a Backend Developer{% endblock %}
+{% block tw_description %}Get in touch with Samrudh S Shetty for backend development, AI projects, or collaboration.{% endblock %}
 
 {% block head_scripts %}
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -9,9 +16,9 @@
 <section class="section">
     <div class="contact-section">
         <div class="contact-wrapper">
-            <h1 class="page-title reveal">Let's talk!</h1>
+            <h1 class="page-title reveal">Let's Talk</h1>
             <p class="contact-subtitle reveal">Wanna talk about work? opportunity? collaboration? or life?</p>
-            <a href="mailto:samrudh20@outlook" class="email-cta reveal">Say hello!</a>
+            <a href="mailto:samrudh20@outlook.com" class="email-cta reveal">Say hello!</a>
         </div>
 
         <div class="contact-grid reveal">
@@ -21,16 +28,16 @@
                     about tech.</p>
                 <div class="contact-channels">
                     <div class="contact-channel">
-                        <img src="{{ url_for('static', filename='images/li.png') }}" alt="linkedin" >
+                        <img src="{{ url_for('static', filename='images/li.png') }}" alt="LinkedIn profile — Samrudh Shetty" >
                         <div>
-                            <div class="contact-channel-label" href="https://www.linkedin.com/in/samrudhsshetty/"><a href="https://www.linkedin.com/in/samrudhsshetty/" target="_blank" rel="noopener noreferrer">
+                            <div class="contact-channel-label"><a href="https://www.linkedin.com/in/samrudhsshetty/" target="_blank" rel="noopener noreferrer">
                                 LinkedIn</a></div>
                         </div>
                     </div>
                     <div class="contact-channel">
-                        <img src="{{ url_for('static', filename='images/github.png') }}" alt="github">
+                        <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub profile — Samrudh Shetty">
                         <div>
-                            <div class="contact-channel-label" href="https://github.com/samrudh9"><a href="https://github.com/samrudh9" target="_blank" rel="noopener noreferrer">
+                            <div class="contact-channel-label"><a href="https://github.com/samrudh9" target="_blank" rel="noopener noreferrer">
                                 GitHub</a></div>
                         </div>
                     </div>
@@ -38,20 +45,27 @@
             </div>
 
             <div class="contact-form-wrapper">
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="form-group" id="nameGroup">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                        <input type="text" id="name" name="name" placeholder="Your name" required
+                               minlength="2" maxlength="100"
+                               autocomplete="name">
+                        <span class="form-error" id="nameError"></span>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="emailGroup">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required
+                               autocomplete="email">
+                        <span class="form-error" id="emailError"></span>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="messageGroup">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="What's on your mind?" required></textarea>
+                        <textarea id="message" name="message" placeholder="What's on your mind?" required
+                                  minlength="10" maxlength="5000"></textarea>
+                        <span class="form-error" id="messageError"></span>
                     </div>
-                    <button type="submit" class="btn-submit">Send Message</button>
+                    <button type="submit" class="btn-submit" id="submitBtn">Send Message</button>
                     <div class="form-status" id="formStatus"></div>
                 </form>
             </div>

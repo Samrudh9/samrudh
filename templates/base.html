@@ -5,14 +5,53 @@
     <link rel="shortcut icon" href="/static/images/screen.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Samrudh — Developer Portfolio. Projects, skills, and experience.">
-    <title>{% block title %}Samrudh{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Samrudh S Shetty — Backend developer and CS student specializing in Python, Flask, and AI-powered products. View projects, skills, and get in touch.{% endblock %}">
+    <title>{% block title %}Samrudh S Shetty — Backend Developer & AI Builder{% endblock %}</title>
+    <link rel="canonical" href="{% block canonical %}https://buildwithsamrudh.xyz/{% endblock %}">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% block og_title %}Samrudh S Shetty — Backend Developer & AI Builder{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Backend developer and CS student building AI-powered products with Python, Flask, and PostgreSQL.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}https://buildwithsamrudh.xyz/static/images/og-cover.png{% endblock %}">
+    <meta property="og:url" content="{% block og_url %}https://buildwithsamrudh.xyz/{% endblock %}">
+    <meta property="og:site_name" content="Samrudh Shetty Portfolio">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@samrudh_09">
+    <meta name="twitter:title" content="{% block tw_title %}Samrudh S Shetty — Backend Developer{% endblock %}">
+    <meta name="twitter:description" content="{% block tw_description %}Backend developer building AI-powered products with Python and Flask.{% endblock %}">
+    <meta name="twitter:image" content="{% block tw_image %}https://buildwithsamrudh.xyz/static/images/og-cover.png{% endblock %}">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Samrudh S Shetty",
+      "url": "https://buildwithsamrudh.xyz",
+      "jobTitle": "Backend Developer & AI Builder",
+      "description": "Final-year Computer and Communication Engineering student specializing in backend development and AI-powered product engineering.",
+      "email": "samrudh20@outlook.com",
+      "sameAs": [
+        "https://github.com/samrudh9",
+        "https://linkedin.com/in/samrudhsshetty",
+        "https://x.com/samrudh_09"
+      ],
+      "knowsAbout": ["Python", "Java", "Flask", "Spring Boot", "PostgreSQL", "MySQL", "REST APIs", "Machine Learning", "NLP", "Docker", "SQLAlchemy", "Git"]
+    }
+    </script>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     {% block head_scripts %}{% endblock %}
 </head>
 
 <body>
-    <!-- Navigation — matching reference portfolio -->
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <a href="/" class="nav-logo">Samrudh</a>
         <div class="nav-links" id="navLinks">
@@ -32,11 +71,6 @@
         </button>
     </nav>
 
-    <!-- Banner -->
-    <div class="banner">
-        <p class="banner-text">This website is under construction; Stalk at your own risk ;)</p>
-    </div>
-
     <div class="nav-overlay" id="navOverlay"></div>
 
     <main class="main-content page-enter">
@@ -47,7 +81,7 @@
     <footer class="footer">
         <div class="footer-inner">
             <span>Made on earth with</span>
-            <img src="{{ url_for('static', filename='images/heart.png') }}" alt="heart" class="footer-heart-img">
+            <img src="{{ url_for('static', filename='images/heart.png') }}" alt="heart icon" class="footer-heart-img">
         </div>
     </footer>
 

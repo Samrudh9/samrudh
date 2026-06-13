@@ -1,16 +1,27 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
+{% block title %}Samrudh S Shetty — Backend Developer & AI Builder | Portfolio{% endblock %}
+{% block meta_description %}Samrudh S Shetty is a backend developer and CS student who builds AI-powered products with Python, Flask, and PostgreSQL. Explore projects and get in touch.{% endblock %}
+{% block canonical %}https://buildwithsamrudh.xyz/{% endblock %}
+{% block og_title %}Samrudh S Shetty — Backend Developer & AI Builder{% endblock %}
+{% block og_description %}Backend developer and CS student building AI-powered products with Python, Flask, and PostgreSQL. Explore projects and get in touch.{% endblock %}
+{% block og_url %}https://buildwithsamrudh.xyz/{% endblock %}
+{% block tw_title %}Samrudh S Shetty — Backend Developer & AI Builder{% endblock %}
+{% block tw_description %}Backend developer and CS student building AI-powered products with Python, Flask, and PostgreSQL.{% endblock %}
 
 {% block content %}
 <section class="hero">
     <div class="hero-cover">
         <div class="hero-left">
-            <h1 class="hero-line reveal">Hey,</h1>
-            <h1 class="hero-line reveal">I'm</h1>
-            <h1 class="hero-line reveal">Samrudh</h1>
+            <h1 class="hero-line reveal">
+                <span class="hero-line-text">Hey,</span>
+                <span class="hero-line-text">I'm</span>
+                <span class="hero-line-text">Samrudh S Shetty</span>
+            </h1>
+            <p class="hero-tagline reveal">Backend Developer & AI Product Builder</p>
+            <a href="/projects" class="hero-cta reveal">View my projects →</a>
         </div>
         <div class="hero-right reveal">
-            <img src="{{ url_for('static', filename='images/character.png') }}" alt="Character illustration"
+            <img src="{{ url_for('static', filename='images/character.png') }}" alt="Illustration of Samrudh Shetty — backend developer and AI builder"
                 loading="eager">
         </div>
     </div>
